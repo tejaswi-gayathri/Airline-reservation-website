@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Register Here</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style1.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery-1.4.2.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script> 
+<script type="text/javascript" src="js/Myriad_Pro_italic_600.font.js"></script>
+<script type="text/javascript" src="js/Myriad_Pro_italic_400.font.js"></script>
+<script type="text/javascript" src="js/Myriad_Pro_400.font.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    function validateForm() {
+    var fname = $.trim($("#fname").val());
+	var lname = $.trim($("#lname").val());
+    var dob = $.trim($("#dob").val());
+	var addr1 = $.trim($("#addr1").val());
+	var addr2 = $.trim($("#addr2").val());
+	var cno = $.trim($("#cno").val());
+	var email = $.trim($("#email").val());
+    var password = $.trim($("#password").val());
+    var repassword = $.trim($("#repassword").val());
+    // validate name
+    if (fname == "") {
+      alert("Enter your first name.");
+      $("#fname").focus();
+      return false;
+    } else if (fname.length < 3) {
+      alert("Name must be atleast 3 character.");
+      $("#fname").focus();
+      return false;
+    }
+	if (lname == "") {
+      alert("Enter your last name.");
+      $("#lname").focus();
+      return false;
+    } else if (lname.length < 3) {
+      alert("Name must be atleast 3 character.");
+      $("#lname").focus();
+      return false;
+    }
+    // validate email
+    if (!isValidEmail(email)) {
+      alert("Enter valid email.");
+      $("#email").focus();
+      return false;
+    }
+    // validate subject
+    if (password == "") {
+      alert("Enter password");
+      $("#password").focus();
+      return false;
+    } else if (password.length < 6) {
+      alert("Password must be atleast 6 character.");
+      $("#password").focus();
+      return false;
+    }
+    if (password != repassword) {
+      alert("Password does not matched.");
+      $("#repassword").focus();
+      return false;
+    }
+    return true;	 
+}
+function isValidEmail(email) {
+    var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }
+</script>
+<script>
+	function check(id){
+	var fn = document.getElementById(id).value;
+	if(fn== "" || fn==null){
+	    switch(id){
+		  case 'fname': document.getElementById("error_fn").innerHTML = "Please fill your first name";
+		  break;
+		  case 'lname': document.getElementById("error_fn").innerHTML = "Please fill your last name";
+		  break;
+		  case 'dob': document.getElementById("error_fn1").innerHTML = "Please fill your date of birth";
+		  break;
+		  case 'addr1': document.getElementById("error_fn2").innerHTML = "Please fill your address";
+		  break;
+		  case 'addr2': document.getElementById("error_fn2").innerHTML = "Please fill your address";
+		  break;
+		  case 'cno': document.getElementById("error_fn3").innerHTML = "Please fill your contact number";
+		  break;
+		  case 'uname': document.getElementById("error_fn4").innerHTML = "Please fill your username";
+		  break;
+		  case 'email': document.getElementById("error_fn5").innerHTML = "Please fill your email-id";
+		  break;
+		  }
+		}
+	  else {
+        document.getElementById("error_fn").innerHTML = "";
+		document.getElementById("error_fn1").innerHTML = "";
+		document.getElementById("error_fn2").innerHTML = "";
+		document.getElementById("error_fn3").innerHTML = "";
+		document.getElementById("error_fn4").innerHTML = "";
+		document.getElementById("error_fn5").innerHTML = "";
+     }
+	}
+</script>
+<style>
+	  #error_fn,#error_fn1,#error_fn2,#error_fn3,#error_fn4,#error_fn5{
+		  color:orange;
+          margin:15px 0px -20px 70px;
+	  }
+	  input[type="text"]{
+	      width:300px;
+		  padding:10px;
+		  margin:20px -20px -20px 70px;
+		  height:40px;
+		  box-sizing:border-box;
+		  border-radius:10px
+	  }
+	  #dob{
+		  width:300px;
+		  padding:10px;
+		  margin:20px -20px -20px 70px;
+		  height:40px;
+		  box-sizing:border-box;
+		  border-radius:10px
+	  }
+	   input[type="password"]{
+	      width:300px;
+		  padding:10px;
+		  margin:20px 10px 10px 70px;
+		  height:40px;
+		  box-sizing:border-box;
+		  border-radius:10px;
+	  }
+	  input[type="submit"]{
+		  width:200px;
+		  padding:10px;
+		  text-align:center;
+		  margin:40px 10px 20px 120px;
+		  height:35px;
+		  box-sizing:border-box;
+		  border-radius:10px;
+		  background-color: #2e2e1f;
+		  color:#ffffff;
+		  border-color:#999999;
+	  }
+	 </style>
+</head>
+<body id="page1">
+<div class="body1">
+	<div class="main">
+<!-- header -->
+		<header>
+			<div class="wrapper">
+				<h1>
+					<a href="" id="logo"></a><span id="slogan">Domestic Airlines</span>
+				</h1>
+				<div class="right">
+					<nav>
+						<ul id="menu">
+							<li id="menu_active"><a href="index_guest.html">Home</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+	</div>
+</div>
+	<div class="it_2">
+			<form name="myForm" action="index1.php" onsubmit="return validateForm();" method="POST">
+			<input type="text" name="fname" id="fname" placeholder="FirstName" onblur="check('fname')"/>
+			<input type="text" name="lname" id="lname" placeholder="LastName" onblur="check('lname')"/><div id="error_fn"></div><br> 
+			<input id="dob" type="date" name="dob" placeholder="Date of Birth (mm/dd/yyyy)" onblur="check('dob')"/><div id="error_fn1"></div>
+			<br>
+			<input type="text" name="addr1" id="addr1" placeholder="Address Line 1" onblur="check('addr1')"/>
+			<input type="text" name="addr2" id="addr2" placeholder="Address Line 2" onblur="check('addr2')"/><div id="error_fn2"></div><br>
+			<input type="text" name="cno" id="cno" placeholder="Contact Number" onblur="check('cno')"/><div id="error_fn3"></div><br>
+			<input type="text" name="email" id="email" placeholder="Email ID" onblur="check('email')"/><div id="error_fn5"></div><br>
+			<input type="text" name="uname" id="uname" placeholder="Username" onblur="check('uname')"/><div id="error_fn4"></div><br>
+			<input type="password" name="password" id="password" placeholder="Password"/>
+			<input type="password" name="repassword" id="repassword" style="margin-left:40px;" placeholder="Confirm Password"/><br>
+			
+			<input type="submit" name="signup" value="Sign up" />
+			</form>
+	</div>
+	
+	<!-- / header -->
+<div class="main">
+	
+</div>
+<div class="body2">
+	<div class="main">
+	</div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

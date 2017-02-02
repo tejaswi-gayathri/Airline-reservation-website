@@ -1,0 +1,23 @@
+
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+	background-color:#29293d;
+	color:white
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 20px;
+    padding-bottom: 20px
+  }
+.active a{
+	color: white !important;
+	background-color:#29293d !important
+}
